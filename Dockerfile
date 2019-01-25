@@ -1,10 +1,6 @@
 FROM nginx:latest
 
-# Install OpenSSL so we can generate SSL certs if needed
-RUN apt-get update; apt-get install -y openssl
-
 # Add nginx configuration and static HTML
-RUN mkdir -p /etc/nginx/certs
 ADD default.conf /etc/nginx/conf.d/default.conf
 COPY html /usr/share/nginx/maintenance
 
